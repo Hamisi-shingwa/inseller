@@ -1,0 +1,129 @@
+@media(max-width:990px){
+    /* This media start for style nav bar */
+   .navbar .services{display: block;}
+   .navbar .link{display: none;}
+   .navbar .aside{display: flex; justify-content: space-between; margin: 0; }
+   .navbar-hiden2{display: flex; justify-content: space-between; transform: translateY(-5px);}
+   
+   /* Style the Registration and login form  component */
+   .middle-register-signup,.middle-register-password-reset{
+    display: flex; width: 100%; justify-content: space-around;
+}
+    /* style for jumbotron container */
+   
+    .jumbotron-desktop-search{display: none;}
+    .jumbotron-shadow{width: 100%;}
+}
+
+@media(max-width:507px){
+    root{  --body: #fff; --bg:  rgba(0,0,85,1);  --family: Verdana, Geneva, Tahoma, sans-serif; 
+        --shadow: 0px 0px 3px 2px rgb(204, 204, 166) inset;}
+    .app{width: 98vw;}
+    .navbar{justify-content: center; position: sticky; top: 0;}
+    /* .navbar .logo{border: 2px solid red;} */
+    .navbar .aside{font-size: 10pt; margin-left: 0;}
+    .navbar-hiden{justify-content: center;}
+    /* .navbar-none{display: none;}     */
+    .hiden-link{width: 100%; height: 40px;}
+    
+    /* Jumbotron media style */
+    .jumbotron{display: none}
+    .jumbotron{border: none; height: 30vh;}
+    .jumbotron .left_side{width: 50%; display: flex; flex-direction: column; align-items: center; }
+    .jumbotron_content{text-align: center; letter-spacing: 0px; width: 100%; height: 90%; 
+        font-size: 11pt;}
+    .jumbotron_image{height: 150px; width: 50%;}
+
+    /* Style for filter component */
+    .filter-element{font-size: 10pt; width: 100%; height: 50px; margin-bottom: 50px; overflow-x: scroll;}
+    .filter-container{width: 670px;}
+
+    /* Search style */
+    .search{display: flex; flex-direction: column; justify-content: space-around;}
+    /* Style Categories and my shop*/
+    .myshop{display: none;}
+    .category-myshop{flex-direction: column;}
+    .categories-parent-container{display:flex;overflow-x: scroll; width: auto; box-shadow: none;}
+    .categories{display: block; height: 100px;}
+    .category_image{width: 80px; height: 50%;}
+    .category{font-size: 10pt;}
+     
+    .myshop .midle{font-size: 10pt;}
+    .top-myshop{display: none;}
+    .firstImage,.secondImage{height: 70%;}
+    .myshop img{margin-top: 10px;}
+/* ***********************************************************************
+style the user ads or products
+********************************************************************** */
+.media-ads{display: block;}
+.parent-add-container{display: grid; place-items: center; position: relative;}
+.ads-header{position: absolute; top: 0; left: 0;}
+.user-products{display: flex; margin-top: 20px; flex-wrap: wrap; width: 90%; justify-content: space-around;}
+.product-image{width: 100px; height: 50px;}
+.product-image img{width: 100%; height: 100%;}
+
+.ads-container{ width: 45%; margin-bottom: 5px; height: fit-content; margin-left: 0px;}
+.user-products{width: 100%;}
+.ads-button-img{width: 100%; height: 40px;}
+.product-image{width: 100%; height: 120px;}
+.product-image img{width: 100%; height: 100%;}
+/* style footer */
+.footer *{font-size: 10pt;}
+/* ******************************************************************************
+AUTH COMPONENST STYLE ARE THEN BELOW
+**************************************************************************** */
+.register-form{width: 95%;}
+.register-top{width: 100%;}
+
+/* * Styles for user profiles pages */ 
+.ads-button-img{width: 50px; height: 40px;}
+.ads-button-img img{width: 100%; height: 100%;}
+.ads-post-content{font-size: 10pt;}
+.add-post-button{width: 100%;}
+.min-midle-user-profile,.footer-user-profile{font-size: 10pt;}
+
+
+
+
+/* Style the Registration and login form  component */
+
+label{ margin-bottom: -20px; font-size: 11pt;}
+.register-Content{font-size: 10pt; margin-top: 10px;}
+.register-Content-third{font-size: 10pt; width: 50%; padding-left: 50px;}
+/* .middle-register{width: 90%;} */
+.middle-register-signup,.middle-register-password-reset{
+    display: flex; width: 100%; justify-content: space-between; font-size: 10pt; 
+} 
+
+
+}
+
+
+
+@media(max-width:435px){
+    /* lets start to style ads product in common mobile device include sumsung A50> and iphone 6>*/
+ .ads-container{ width: 45%; margin-bottom: 5px; height: fit-content;}
+ .user-products{width: 100%;}
+ .ads-button-img{width: 100%; height: 40px;}
+ .product-image{width: 100%; height: 120px;}
+ .product-image img{width: 100%; height: 100%;}
+
+ /* * ******************************************************************************
+AUTH COMPONENST STYLE FOR THIS MEDIA ARE THEN BELOW 
+**************************************************************************** */
+
+/* Style the Registration and login form  component */
+.middle-register-qstion{width:  100%;}
+.isLoading{ width: 100%; height: 40px;}
+}
+
+
+@media(max-width:267px){
+    /* lets start to style ads product*/
+ /* .parent-add-container{border: 2px solid rgb(17, 6, 6);} */
+ .ads-container{ width: 100%;}
+ .user-products{width: 100%;}
+ .ads-button-img{width: 100%; height: 40px;}
+ .product-image{width: 100%; height: 170px; }
+ .product-image img{width: 100%; height: 100%;}
+}

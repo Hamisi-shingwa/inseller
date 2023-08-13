@@ -1,0 +1,65 @@
+@media (max-width:920px) {
+    .post_formContainer{
+        /* border: 2px solid; */
+        width: 100vw;
+    }
+    form{
+        width: 98vw;
+    }
+}
+@media (max-width:570px) {
+    .post_formContainer{
+        /* border: 2px solid; */
+        width: 100vw;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 98vw;
+    }
+    .mondatory-info, .other-details-on-right-side{
+        width: 96%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* border: 2px solid red; */
+        /* margin: 0; */
+    }
+    .otherdetailsrow{
+        margin: 0;
+        width:100%;
+        /* border: 2px solid red; */
+      
+    }
+    .otherdetailsrow .firstElement-on-otherDetails, .secondElement-on-otherDetails{
+        width: 100%;
+        /* border: 2px solid red; */
+    }
+  select, textarea, input, .card{
+    margin-left: 0px;
+    width:100%;
+  
+   }
+   .outnav .right-section{
+    width: 100%;
+}
+input[type="submit"]{
+    width: 100%;
+    margin-left: 0;
+}
+ .mother-submit-loader{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+    height: 90%;
+    display: grid;
+    place-items: center;
+    border-radius: 0.2rem;  
+} 
+.submision-error-element{
+    width: 100%;
+  
+}  
+}

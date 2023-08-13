@@ -1,0 +1,139 @@
+:root{
+    --bg4:rgb(238, 233, 227);
+    --albg: rgba(0,0,85,1);
+}
+/* .description-container{
+  height: 100vh; 
+  font-family: 'Courier New', Courier, monospace; 
+  
+} */
+.description_category{
+    background-color: var(--bg4);
+    height: 45px;
+    padding: 10px;
+   
+}
+.product-element{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+   
+}
+.products-image{
+    width: 40%;
+   
+  
+
+}
+.big-image,.other-image{
+    width: 98%;
+    margin: 10px 5px 10px 5px;
+    border: 2px solid var(--bg4);
+}
+.big-image{
+    border-bottom: none;
+}
+.other-image{
+    border-top: none;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+   
+
+}
+.f-image,.s-image,.t-image{
+    width: 25%;
+    transition: 0.5s linear;
+}
+.other-image *:hover{
+    cursor: pointer;
+   transform: scale(1.1);
+}
+.product-description{
+    width: 50%;
+    margin-top: 10px;
+   
+}
+img{
+    width: 100%;
+}
+.product-amount,.posted-duration,.small-descriptioon,.product-man-contact {
+    margin-top: 20px;
+}
+.product-man-contact{
+   width: 40%;
+   height: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+}
+.Show-contact{
+    width: 20%;
+    height: 40px;
+    border: 2px solid gray;
+   
+}
+.Show-contact .cont-image{
+    width: 100%;
+    height: 100%;
+}
+.Number-contact{
+    width: 90%;
+}
+.clicked-contact{
+    display: grid;
+    place-items: center;
+    background-color: var(--albg);
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+input[type='tel']{
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+
+}
+.structured-details{
+    height: 200px;
+   
+}
+.description-parent{
+    display: flex;
+    height: 40px;
+   
+}
+.description-parent *{
+    border: 1px solid gray;
+
+}
+.description-title{
+    width: 30%;
+}
+.details-fortitle{
+    width: 70%;
+   
+}
+
+@media(max-width:570px){
+    .product-element{
+        flex-direction: column;
+    }
+    .product-description,.products-image{
+        width: 100%;
+    }
+    .product-man-contact{
+        width: 90%;
+    }
+    .product-info{
+        margin-top: 20px;
+    }
+}

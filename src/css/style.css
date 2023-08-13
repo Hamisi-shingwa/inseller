@@ -1,0 +1,204 @@
+:root{  --body: #fff; --bg2:rgba(0,0,85,1);  --family: Verdana, Geneva, Tahoma, sans-serif;
+    --bg:#e96316;  --bg:rgba(0,0,85,1);
+ --shadow: 0px 0px 3px 2px rgb(204, 204, 166) inset;
+ --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    --color: #000;;
+    background-color:#fff;
+    --shadow: 0px 0px 2px 1px rgb(203, 197, 197);
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    --bg2:rgba(0,0,85,1); 
+    --bg:#e96316;  --bg:rgba(0,0,85,1);
+    /* Other thems color */
+    --primary-color: #1E7B67;
+    --secondary-color: #FDD562;
+    --background-color: #F7F7F7;
+    --button-color:  rgb(0, 149, 255);
+
+
+}
+ /* comment previous color button --bg2:#e96316; */
+body,html{overflow-x: hidden;}
+body{  margin: 0;  display: flex;  justify-content: center;  background-color: var(--body);} 
+body *{   margin: 0;  padding:0;  box-sizing:border-box; font-family: var(--family);}
+
+.app{ width: 95vw;}  
+/* Navbar style */
+a{text-decoration: none;}
+.navbar{display: flex; justify-content: space-between; align-items: center; background-color : var(--primary-color);
+color: #fff;height: 70px; position: sticky; top: 0; z-index: 2; }
+
+.navbar a{   text-decoration: none; color: #fff; margin-right: 20px;}
+.navbar .logo{height: 100%;width: 100px;}
+.navbar img{  width: 100%; height: 100%;}
+.navbar .aside{margin-left: 50%;}
+.navbar .services{display: none;}
+.navbar-hiden{display: flex; justify-content: space-between; transform: translateY(-50px); transition: 0.3s;
+position: relative; z-index: 1; }
+.hiden-link a{text-decoration:none; color: #fff; margin-right: 20px; }
+.hiden-link{background-color: #c58b6a; width: 50%; display: flex; justify-content: center; align-items: center;}
+
+/* Jumbotrone style */
+.jumbotron{box-shadow: var(--shadow);
+     display: flex;  justify-content: space-between; align-items: center; 
+     box-shadow: var(--shadow)
+;}
+
+.jumbotron-desktop-search{width: 40%; 
+}
+.jumbotron .select{
+    width: 25%;
+}
+.jumbotron select{
+    width: 100%;
+}
+/* .search-container{width: 100%; text-align: center;}
+.search-container-input{width: 80%; height: 50px; padding: 10px;} */
+.post-container{width: 80%; background-color: #fff; height: 30%; text-align: center; display: flex; flex-direction: column;
+align-items: center;}
+.post-container-symbol{width: 70px; height: 70px; border-radius: 100%;  margin-top: 20px;
+background-color: #c58b6a; color: var(--bg2); display: grid; place-items: center; font-size: 40px; cursor: pointer;}
+.jumbotron-shadow{
+    width: 100px;
+    background-color: var(--bg2);
+    height: 100%; position: absolute; top: 0; left: 0; width: 70%; opacity: 0.1;
+}
+/* Style for filter component */
+.filter-element{ box-shadow: var(--shadow); color: var(--bg2); font-weight: bold;}
+
+/* Styled search component */
+.search{display: none; border: 2px solid var(--bg2); background-image: url('../images/bg.jpg'); background-position: center;
+background-repeat: no-repeat;  background-size: cover;position: relative; height: 45vh; min-height: 250px;}
+
+.search_container{ background-color: var(--bg); opacity: 0.8;   top: 0; width: 100%; 
+height: 100%;   position: absolute; top: 0; left: 0;}
+
+.search_content{  background-color: var(--bg);  color: #fff; height: 30%;  margin-top: 10px; border-radius: 10px;}
+
+.search_content .welcome,.below_welcome{ margin-left: 10px; font-size: 15pt; padding-top: 10px;}
+.below_welcome{font-size: 10px;}  
+.search_bar{display: flex; margin-top: 20px; height: 42px; min-height: 40px;
+    border: 2px solid; align-items: center; justify-content: center;
+    background-color: rgba(242, 242, 242, 1); border-radius: 20px;}
+
+.search_image{height: 100%;}
+.search_image img{height: 90%;}
+
+.search_bar .search_input{width: 90%; height: 100%; border: none; outline: none; border-radius: 20px;}
+.yellow_span{display: inline-block; width: 10px; height: 10px; border-radius: 100%;
+    background-color: yellow;}
+
+.search_content,.search_bar,.search_aside{
+position: relative;
+z-index: 1;
+}
+
+/* ****************************************************
+styel categories and myshop
+****************************************************** */
+.category-myshop{display: flex; justify-content: space-between;}
+.categories-parent-container{box-shadow: var(--shadow); width: 250px; cursor: pointer;}
+.categories-container{width:200px; margin: 10px 0px 0px 10px;}
+ .categories{height: 30px; width: 100%; display: flex; justify-content: space-between;}
+.category_image{width: 50px; height: 80%;}
+.category_image img{width: 100%; height: 100%;}
+
+.myshop{width: 100%; overflow-y: scroll; max-height: 500px;}
+.top-myshop{height: 200px; box-shadow: var(--shadow); display: flex; justify-content: space-around; }
+.myshop-image{width: 400px; height: 200px;}  
+.myshop-image img{width: 100%; height: 100%;} 
+.myshop-description{font-size: 30px; letter-spacing: 2px; margin-top: 30px;}
+
+.down-myshop{display: flex; height: 250px; justify-content: space-around;}
+.firstImage,.secondImage{height: 100%; cursor: pointer;transition: 0.3s;}
+.secondImage:hover{transform: scale(1.1);}
+.firstImage:hover{transform: scale(1.1);}
+.myshop .midle{text-align: center; margin-top: 10px; font-size: 20px;}
+.down-myshop img{height: 100%; margin-top: 3px;}
+
+/* ***********************************************************************
+style the user ads or products
+********************************************************************** */
+.media-ads{display: none;}
+.ads-header{color: var(--bg2); font-weight: bold; margin-left: 20px;}
+.parent-add-container{display: grid; margin-top: 30px; }
+.user-products{display: flex; margin-top: 5px; flex-wrap: wrap; width: 100%; 
+     }
+.product-image{width: 200px; height: 150px;}
+.product-image img{width: 100%; height: 100%; border-radius: 5px;}
+.rounded-for-item-legth{ width: 25px; height: 30px; border-radius: 10px; text-align: center;
+margin-top: -15px; position: relative; background-color: #fff; color: var(--bg2) ;}
+.product-name-time{display: flex; justify-content: space-between;}
+.ads-container{cursor: pointer; height: 210px; position: relative; box-shadow:0px 0px 2px 2px rgb(194, 186, 186) ;
+margin-top: 10px; margin-left: 20px;}
+.product-location,.product-name,.price,.amount{font-size: 10pt}
+.product-name{max-width: 80%;}
+.shop-button{margin-bottom: 20px;}
+.product-price{display: flex; width: 100px; justify-content: space-between; color: var(--bg2); font-weight: bold;}
+.uploaded-on{font-size: 10pt;}
+
+
+/* ****************************************************************
+stye the footer
+*************************************************************** */
+.footer{display: grid; place-items: center; width: 100vw; height: 200px; background-color: black; color: #fff;}
+
+/* ******************************************************************************
+AUTH COMPONENST STYLE ARE THEN BELOW
+**************************************************************************** */
+
+/* Style for Registration and login form  */
+.register-container{display: flex; flex-direction: column; align-items: center;  height: 100vh; 
+ font-size: 10pt; min-height: 480px; position: relative;}
+ .register-top{display: flex; justify-content: space-between; align-items: center; height: 10%; 
+    width: 80%; box-shadow: var(--shadow); min-height: 50px;}
+.register-Content{ width: 80%;}
+.register-Content-first{height: 45px; width: 70px; text-align: center; padding-top: 5px;}
+.register-Content-first img{height: 100%; width: 100%;}
+.register-Content-third {margin-right: 20px; color: var(--bg2);}
+
+.register-form{ width: 80%;  height: 50%; min-height: 300px;}
+ label,.form-input{display: block; margin-top: 20px;}
+ label{ margin-bottom: -20px;}
+ .form-input{ padding: 5px 0px 1px 20px; width: 100%; height: 15%; border-radius: 5px; border: none; outline: none;
+    box-shadow: 0px 0px 1px 1px rgb(194, 186, 186);}
+ .form-input-submit{ padding: 5px 0px 1px 20px; width: 100%; height: 15%; border-radius: 10px; margin-top: 15px;
+border: none;}
+.register-form input[type='submit']{background-color: var(--bg2); color: #fff; cursor: pointer;}
+
+
+.middle-register{width: 100%; height: 20%; margin-top: 10px;}
+.middle-register-signup,.middle-register-password-reset{  width: 50%; justify-content: space-around; margin-bottom: 5px;}
+.middle-register-password-reset *{ display: inline-block; width: 50%; justify-content: space-around;}
+.middle-register-signup *{ display: inline-block; width: 50%; justify-content: space-around;}
+
+.error{color:red; font-size: 10pt;}
+
+.isLoading{display: flex; justify-content: center;}
+.isLoading-element{width: 30px; height: 30px; border: 5px dotted coral; border-bottom: none; border-radius: 100%; 
+border-right: none; animation: preloader 1s infinite linear;}
+.form-footer-element{position: fixed; bottom: 0;}
+.form-footer{display: flex; justify-content: center; align-items: center;}
+
+@keyframes preloader {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg)}
+}
+
+
+/* Styles for user profiles pages */
+.top-user_profile{display: flex; justify-content: space-between; align-items: center;}
+.min-midle-user-profile{display: flex; justify-content: space-between; align-items: center; margin-top: 20px;}
+.footer-user-profile{box-shadow: var(--shadow); margin-top: 20px; height: 150px;}
+.add-post-button{width: 50%; cursor: pointer; margin-top: 50px; background-color: var(--bg2); height: 40px; color: #fff;}
+
+/* Style for the form */
+.post-form-input{width: 100%; height: 40px;}

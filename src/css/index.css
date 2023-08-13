@@ -1,0 +1,45 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000;;
+  background-color:#fff;
+  --shadow: 0px 0px 2px 1px rgb(175, 169, 169);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+form{
+  height: 100%;
+}
+form label{
+  float: left;
+}
+/* form input{
+   background-color: #fff;
+   margin-top: 10px;
+   border: none;
+   box-shadow: var(--shadow);
+   padding: 7px;
+   border-radius: 2px;
+   color: #000;
+} */

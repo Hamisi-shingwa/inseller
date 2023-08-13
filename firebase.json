@@ -1,0 +1,8 @@
+{
+  "database": {
+    "rules": "firebase.rule"
+  },
+  "projects": {
+    "default": "inseller-7c55b"
+  }
+}
