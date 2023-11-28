@@ -40,10 +40,9 @@ body *{
 }
 
 
-form{
-    /* border: 2px solid red; */
+.post_formContainer form{
+    /* border: 2px solid red;   */
     width: 80vw;
-    height: 80vh;
     background-color: #fff;
     display: flex;
     margin-top: 20px;
@@ -58,7 +57,7 @@ form{
   .otherdetailsrow{
     margin:0px 10px 0px 10px;
   }
-select, input{
+.post_formContainer form select, input{
     display: block;
     background-color: aliceblue;
     color: var(--color);
@@ -71,22 +70,22 @@ select, input{
     border-radius: 4px;
    
 }
-input{
+.post_formContainer form input{
     background-color: white;
     padding: 10px;
 }
-input[type="checkbox"]{
+.post_formContainer form input[type="checkbox"]{
     box-shadow: none;
     width: 30px;
     background-color: #fff;
 }
-input[type="submit"]{
+.post_formContainer form input[type="submit"]{
     width: 50%;
     margin: 15px 0px 0px 20px;
     background-color: var(--button-color);
     border-radius: 0.2rem;
 }
-textarea{
+.post_formContainer form textarea{
     outline: none;
     height: 152px;
     box-shadow: var(--shadow);
@@ -190,4 +189,19 @@ STYLES FOR OUT NAVABR
 }
 .outnav .right-section a{
     color: #fff;
+    text-decoration: none;
+}
+/* ********************************************
+STYLE FOR FORM SUBMISION
+******************************************* */
+.successfull-submited{
+    position: fixed;
+    right: 0;
+    background-color: green;
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
 }

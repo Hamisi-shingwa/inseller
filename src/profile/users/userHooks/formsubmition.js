@@ -10,13 +10,15 @@
     const [uploadError, setUploadError] = useState(null);
     const [imageLoader, setImageLoader] = useState(false);
     const [userAuth, setUserAuth] = useState('')
+    const [productPosted, setProductPosted] = useState(false)
+  
   
     const [datas, setDatas] = useState({
       Material: '',
       category: '',
       color: '',
       createdBy: '',
-      description: '',
+      description: '', 
       image1: '', // Image URL will be stored here
       location: '',
       negotiatible: '',
@@ -24,6 +26,7 @@
       price: '',
       title: '',
       type: '',
+      productID:'',
       timestamp: new Date()
     });
 
@@ -41,7 +44,8 @@
         const auth = getAuth()
         const user = auth.currentUser
         await updateDoc(doc(db,'products',docRef.id),{
-          createdBy:user.uid
+          createdBy:user.uid,
+          productID: docRef.id
         })
 
         //Then stop loading and other operation
@@ -60,6 +64,9 @@
           title: '',
           type: '',
         });
+        setProductPosted(true)
+        //call show image uinspected
+        
       }
        
       } catch (error) {
@@ -75,22 +82,24 @@
         if (file) {
           setImageLoader(true);
           const fileSize = file.size / 1024; // Size in KB
-          const minSize = 600; // Minimum size in KB
+          const minSize = 30; // Minimum size in KB
           const maxSize = 3000; // Maximum size in KB
 
           if (fileSize < minSize) {
             setImageLoader(false);
-            setUploadError("The file size is too small. Please upload a file with a size greater than 600KB and less than 3MB.");
+            setUploadError("The file size is too small. Please upload a file with a size greater than 30KB and less than 3MB.");
             return false;
           } else if (fileSize > maxSize) {
             setImageLoader(false);
-            setUploadError("The file size is too large. Please upload a file with a size greater than 600KB and less than 3MB.");
+            setUploadError("The file size is too large. Please upload a file with a size greater than 30KB and less than 3MB.");
             return false;
           } else {
             const extensionAcceptable = extensionHandler(file);
             if (extensionAcceptable) {
             
+              console.log(file)
             const url =  await UploadingFile(file); // <--- Here it is!
+            console.log(url)
               // Set the image in datas
               setDatas(prevData => ({ ...prevData, image1: url }));
             
@@ -100,7 +109,7 @@
             }
           }
         }
-      };
+      };    
 
       // Function that handles the URL for the selected image
       const showImage = (image, element) => {
@@ -128,11 +137,13 @@
         // Check if image was uploaded
         if (uploadedImage) {
           // then create reference
-          const storageRef = ref(storage, `productImages/${new Date().getHours()}`);
+          const uniqueIdentifier = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}`
+          const storageRef = ref(storage, `productImages/${uniqueIdentifier}`);
           // then let us upload an image first
           try {
             await uploadBytes(storageRef, uploadedImage);
             const imageUrl = await getDownloadURL(storageRef);
+            console.log(imageUrl)
       
             // Check if we got the storage ref
             if (imageUrl) {
@@ -151,10 +162,17 @@
         }
       }
 
+      const  handleProductSubmitedMsgDisplay = (element)=>{
+       setTimeout(()=>{
+        if(element) element.style.display = "none"
+       })
+      }
+
       const handleSubmision = async (e) => {
         e.preventDefault();
         setSubmisionLoader(true)
         dataSubmision()
+        
       }
 
       return {
@@ -172,6 +190,8 @@
         setUploadError,
         imageLoader,
         setImageLoader,
+        productPosted,
+        handleProductSubmitedMsgDisplay
       
       }
     }

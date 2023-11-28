@@ -4,7 +4,7 @@ import { SelectItems } from '../profile/users/userHooks/select_Items'
 export default function Jumbotron() {
   const {Categories, Locations} = SelectItems()
 return (
-<div className='jumbotron'>
+<div className='jumbotron'> 
 <div className='select'>
   <select name="" id="">
     <option value="">Sort by Category</option>

@@ -28,24 +28,77 @@
  /* comment previous color button --bg2:#e96316; */
 body,html{overflow-x: hidden;}
 body{  margin: 0;  display: flex;  justify-content: center;  background-color: var(--body);} 
-body *{   margin: 0;  padding:0;  box-sizing:border-box; font-family: var(--family);}
+body *{   margin: 0;  padding:0;  box-sizing:border-box; font-family: var(--family);  font-size: 10pt;}
 
-.app{ width: 95vw;}  
+.app{ width: 95vw;} 
+/* *******************************************************************
 /* Navbar style */
+/* ***************************************************************** */ 
+.Home{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
 a{text-decoration: none;}
-.navbar{display: flex; justify-content: space-between; align-items: center; background-color : var(--primary-color);
-color: #fff;height: 70px; position: sticky; top: 0; z-index: 2; }
 
-.navbar a{   text-decoration: none; color: #fff; margin-right: 20px;}
-.navbar .logo{height: 100%;width: 100px;}
-.navbar img{  width: 100%; height: 100%;}
-.navbar .aside{margin-left: 50%;}
-.navbar .services{display: none;}
-.navbar-hiden{display: flex; justify-content: space-between; transform: translateY(-50px); transition: 0.3s;
-position: relative; z-index: 1; }
-.hiden-link a{text-decoration:none; color: #fff; margin-right: 20px; }
-.hiden-link{background-color: #c58b6a; width: 50%; display: flex; justify-content: center; align-items: center;}
+.navbar{
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 3px 1px rgb(194, 187, 187) inset;
+  
+  
+}
+.navbar .logo{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+.navbar .logo img{
+    width: 100%;
+    height: 100%;
+   
+}
+.navbar .aside, .media-aside{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+.navbar .aside a, .media-aside a{
+    text-decoration: none;
+    color: #F7F7F7;
+   
+}
+/* bellow navbar style for media-aside being absolute over entire body or browser */
+.navbar .media-aside{
+    width: 250px;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50vh;
+    position: absolute;
+    top: 0;
+    background-color: var(--primary-color);
+    padding-left: 10px;
+    margin-top: 55px;
+    transition: 1s;
+    transform: translateX(-250px);
+    display: none;
+    z-index: 1;
 
+}
+.navbar .media-aside-view{
+  transition: 1s;
+  transform: translateX(0px);
+}
+.navbar .svg{
+    margin-right: 10px;
+    display: none;
+}
 /* Jumbotrone style */
 .jumbotron{box-shadow: var(--shadow);
      display: flex;  justify-content: space-between; align-items: center; 
@@ -56,9 +109,17 @@ position: relative; z-index: 1; }
 }
 .jumbotron .select{
     width: 25%;
+    height: 40px;
+    
 }
 .jumbotron select{
     width: 100%;
+    height: 100%;
+    background-color: #F7F7F7;
+    color: #000;
+    box-shadow: var(--shadow);
+    border: none;
+    outline: none;
 }
 /* .search-container{width: 100%; text-align: center;}
 .search-container-input{width: 80%; height: 50px; padding: 10px;} */
@@ -111,7 +172,7 @@ styel categories and myshop
 .category_image{width: 50px; height: 80%;}
 .category_image img{width: 100%; height: 100%;}
 
-.myshop{width: 100%; overflow-y: scroll; max-height: 500px;}
+/* .myshop{width: 100%; overflow-y: scroll; max-height: 500px;  border: 2px solid red; } */
 .top-myshop{height: 200px; box-shadow: var(--shadow); display: flex; justify-content: space-around; }
 .myshop-image{width: 400px; height: 200px;}  
 .myshop-image img{width: 100%; height: 100%;} 
@@ -123,22 +184,22 @@ styel categories and myshop
 .firstImage:hover{transform: scale(1.1);}
 .myshop .midle{text-align: center; margin-top: 10px; font-size: 20px;}
 .down-myshop img{height: 100%; margin-top: 3px;}
-
+ 
 /* ***********************************************************************
 style the user ads or products
 ********************************************************************** */
-.media-ads{display: none;}
+.media-ads{display: none; flex: 1;}
 .ads-header{color: var(--bg2); font-weight: bold; margin-left: 20px;}
-.parent-add-container{display: grid; margin-top: 30px; }
-.user-products{display: flex; margin-top: 5px; flex-wrap: wrap; width: 100%; 
+.parent-add-container{display: grid; margin-top: 30px;}
+.user-products{display: flex; margin: 5px ; flex-wrap: wrap; width: 100%; height: auto;
      }
-.product-image{width: 200px; height: 150px;}
+.product-image{width: 100%; height: 150px;}
 .product-image img{width: 100%; height: 100%; border-radius: 5px;}
 .rounded-for-item-legth{ width: 25px; height: 30px; border-radius: 10px; text-align: center;
 margin-top: -15px; position: relative; background-color: #fff; color: var(--bg2) ;}
 .product-name-time{display: flex; justify-content: space-between;}
 .ads-container{cursor: pointer; height: 210px; position: relative; box-shadow:0px 0px 2px 2px rgb(194, 186, 186) ;
-margin-top: 10px; margin-left: 20px;}
+margin-top: 10px; margin-left: 20px; min-width: 200px; max-width: 250px;}
 .product-location,.product-name,.price,.amount{font-size: 10pt}
 .product-name{max-width: 80%;}
 .shop-button{margin-bottom: 20px;}
@@ -149,7 +210,10 @@ margin-top: 10px; margin-left: 20px;}
 /* ****************************************************************
 stye the footer
 *************************************************************** */
-.footer{display: grid; place-items: center; width: 100vw; height: 200px; background-color: black; color: #fff;}
+.footer{display: grid; place-items: center; width: 100vw;
+     height: 20px; color: rgb(54, 54, 51);
+     margin-top: auto;
+    }
 
 /* ******************************************************************************
 AUTH COMPONENST STYLE ARE THEN BELOW
@@ -157,17 +221,20 @@ AUTH COMPONENST STYLE ARE THEN BELOW
 
 /* Style for Registration and login form  */
 .register-container{display: flex; flex-direction: column; align-items: center;  height: 100vh; 
- font-size: 10pt; min-height: 480px; position: relative;}
+ font-size: 10pt; min-height: 480px; position: relative; width: 40vw;}
+ .register-container a{
+    text-decoration: none;
+ }
  .register-top{display: flex; justify-content: space-between; align-items: center; height: 10%; 
-    width: 80%; box-shadow: var(--shadow); min-height: 50px;}
+    width: 40vw; box-shadow: var(--shadow); min-height: 50px;}
 .register-Content{ width: 80%;}
 .register-Content-first{height: 45px; width: 70px; text-align: center; padding-top: 5px;}
 .register-Content-first img{height: 100%; width: 100%;}
 .register-Content-third {margin-right: 20px; color: var(--bg2);}
 
 .register-form{ width: 80%;  height: 50%; min-height: 300px;}
- label,.form-input{display: block; margin-top: 20px;}
- label{ margin-bottom: -20px;}
+ .form-input{display: block; margin-top: 20px;}
+
  .form-input{ padding: 5px 0px 1px 20px; width: 100%; height: 15%; border-radius: 5px; border: none; outline: none;
     box-shadow: 0px 0px 1px 1px rgb(194, 186, 186);}
  .form-input-submit{ padding: 5px 0px 1px 20px; width: 100%; height: 15%; border-radius: 10px; margin-top: 15px;
@@ -175,8 +242,8 @@ border: none;}
 .register-form input[type='submit']{background-color: var(--bg2); color: #fff; cursor: pointer;}
 
 
-.middle-register{width: 100%; height: 20%; margin-top: 10px;}
-.middle-register-signup,.middle-register-password-reset{  width: 50%; justify-content: space-around; margin-bottom: 5px;}
+.middle-register{width: 100%; height: 20%; margin-top: 10px; }
+.middle-register-signup,.middle-register-password-reset{  width: 100%; justify-content: space-around; margin-bottom: 5px;}
 .middle-register-password-reset *{ display: inline-block; width: 50%; justify-content: space-around;}
 .middle-register-signup *{ display: inline-block; width: 50%; justify-content: space-around;}
 

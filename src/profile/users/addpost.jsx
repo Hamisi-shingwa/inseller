@@ -8,30 +8,46 @@ import  "../../css/users/post.css"
 import  "../../css/users/media.css"
 import Topoutnav from './userComponets/topoutnav'
 import Outnavbar from './userComponets/outnavbar'
+// import { auth } from '../../firebaseConfig'
+import { getAuth } from 'firebase/auth'
 
-
-
+ 
 export default function Addpost() {
+
+  const navigate = useNavigate()
+//Understanding authentication of current user
+const isAuthenticated = ()=>{
+  const auth = getAuth()
+  const user = auth.currentUser
+  if(!user){
+   navigate('/login')
+  }
+}
+if(navigate) isAuthenticated()
 
 //Lets as all necessary  hooks 
 const {Categories, Locations} = SelectItems()
-// const {HandleUpload, uploadError, setUploadError, imageLoader,setImageLoader} = HandlerUploaderImage() //handleUploadedfile
 const {datas,setDatas,handleChange,handleSubmision,
   submisionLoader,submisionError,HandleUpload, uploadError, setUploadError,
-   imageLoader} = FormDatas()//formDatahandler_Hooks
+   imageLoader,productPosted,
+  handleProductSubmitedMsgDisplay} = FormDatas()//formDatahandler_Hooks
   
 
 //Load Necessary element once component is loaded
 useEffect(() => {
   //check if user is authenticated
+  isAuthenticated()
+
   const imageElement = document.querySelector('.imageElement');
   const imageFile = document.getElementById('imageFile'); 
   const  imageDisplay = document.querySelector('.imageDisplay')
-  
+ 
  
   handleImage(imageFile,imageElement,imageDisplay)
-
-}, [ ]);
+ 
+  console.log("is render agin")
+ 
+}, []);
 
 const handleImage = (imageFile,imageElement,imgDisp)=>{
     imageElement.onclick = ()=> {
@@ -41,6 +57,12 @@ const handleImage = (imageFile,imageElement,imgDisp)=>{
     }
     imageFile.onchange = (e)=> HandleUpload(e.target.files[0],imgDisp)   
 }                        
+
+// Bellow function fire to disable overall display of message show product submited
+
+  const submitedElement = document.querySelector(".successfull-submited")
+  handleProductSubmitedMsgDisplay(submitedElement)
+
 
 
   return (
@@ -61,7 +83,7 @@ const handleImage = (imageFile,imageElement,imgDisp)=>{
        <option value={category.name} key={category.id}>{category.name}</option>
       )
      })}
-   </select>
+   </select> 
 
 
 {/* Select from list of Region */}
@@ -109,7 +131,7 @@ this is card that wrapp up to 6 element within
 </div>
 </div>
 
-<input type="text" 
+<input type="text"  
 id='title' placeholder='title*'
  value={datas.title}
  onChange={handleChange}
@@ -179,7 +201,7 @@ id='title' placeholder='title*'
       />
      </div>
      </div> 
-
+ 
      {/* TextArea for descripition */}
      <textarea
       value={datas.description} 
@@ -205,7 +227,9 @@ id='title' placeholder='title*'
   <div className=" d-grid  text-danger submision-error-element">{submisionError}</div>
  )}
 </div>
-
+{productPosted && (
+   <div className="successfull-submited">Product posted successful</div>
+)}
    </form>
     </div>
   )

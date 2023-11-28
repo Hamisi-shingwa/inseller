@@ -8,7 +8,7 @@ export default function Outnavbar() {
     <div className='outnav navbar'>
         <div className='left-nav'></div>
         <div className='right-section d-flex justify-content-between'>
-        <Link to="">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="">Login</Link>
         <Link to="">About</Link>
         <Link to="">Contact</Link>
@@ -17,3 +17,4 @@ export default function Outnavbar() {
     </div>
   )
 }
+ 

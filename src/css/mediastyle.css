@@ -2,7 +2,7 @@
     /* This media start for style nav bar */
    .navbar .services{display: block;}
    .navbar .link{display: none;}
-   .navbar .aside{display: flex; justify-content: space-between; margin: 0; }
+   .navbar .aside{ width: 40%; display: flex; justify-content: space-between; margin: 0; }
    .navbar-hiden2{display: flex; justify-content: space-between; transform: translateY(-5px);}
    
    /* Style the Registration and login form  component */
@@ -11,21 +11,29 @@
 }
     /* style for jumbotron container */
    
-    .jumbotron-desktop-search{display: none;}
+   
     .jumbotron-shadow{width: 100%;}
+    /* form style */
+    .register-container{
+        width: 90vw;
+    }
 }
 
 @media(max-width:507px){
     root{  --body: #fff; --bg:  rgba(0,0,85,1);  --family: Verdana, Geneva, Tahoma, sans-serif; 
         --shadow: 0px 0px 3px 2px rgb(204, 204, 166) inset;}
     .app{width: 98vw;}
-    .navbar{justify-content: center; position: sticky; top: 0;}
-    /* .navbar .logo{border: 2px solid red;} */
-    .navbar .aside{font-size: 10pt; margin-left: 0;}
-    .navbar-hiden{justify-content: center;}
-    /* .navbar-none{display: none;}     */
-    .hiden-link{width: 100%; height: 40px;}
-    
+    .navbar{justify-content: center; position: fixed; width: 100vw; height: 55px;}
+    .navbar .aside{
+        display: none;
+
+    }
+   .navbar .media-aside{
+    display: flex;
+   }
+   .navbar .svg{
+    display: block;
+   }
     /* Jumbotron media style */
     .jumbotron{display: none}
     .jumbotron{border: none; height: 30vh;}
@@ -62,8 +70,9 @@ style the user ads or products
 .product-image{width: 100px; height: 50px;}
 .product-image img{width: 100%; height: 100%;}
 
-.ads-container{ width: 45%; margin-bottom: 5px; height: fit-content; margin-left: 0px;}
-.user-products{width: 100%;}
+.user-products{width: 100%; }
+.ads-container{ width: 45%; margin-bottom: 5px; height: fit-content; margin-left: 0px; }
+
 .ads-button-img{width: 100%; height: 40px;}
 .product-image{width: 100%; height: 120px;}
 .product-image img{width: 100%; height: 100%;}
@@ -72,10 +81,10 @@ style the user ads or products
 /* ******************************************************************************
 AUTH COMPONENST STYLE ARE THEN BELOW
 **************************************************************************** */
-.register-form{width: 95%;}
-.register-top{width: 100%;}
+.register-form{width: 95vw;}
+.register-top{width: 95vw;}
 
-/* * Styles for user profiles pages */ 
+/* * Styles for user profiles pages */  
 .ads-button-img{width: 50px; height: 40px;}
 .ads-button-img img{width: 100%; height: 100%;}
 .ads-post-content{font-size: 10pt;}
@@ -102,7 +111,7 @@ label{ margin-bottom: -20px; font-size: 11pt;}
 
 @media(max-width:435px){
     /* lets start to style ads product in common mobile device include sumsung A50> and iphone 6>*/
- .ads-container{ width: 45%; margin-bottom: 5px; height: fit-content;}
+ .ads-container{ width: 42%; margin-bottom: 5px; height: fit-content;}
  .user-products{width: 100%;}
  .ads-button-img{width: 100%; height: 40px;}
  .product-image{width: 100%; height: 120px;}
@@ -117,6 +126,14 @@ AUTH COMPONENST STYLE FOR THIS MEDIA ARE THEN BELOW
 .isLoading{ width: 100%; height: 40px;}
 }
 
+
+/* Syle for Iphone 6/7/8 */
+@media(max-width:400px){
+     /* lets start to style ads product in common mobile device include sumsung A50> and iphone 6>*/
+ .user-products{width: 100%;}
+ .ads-container{min-width: 30%;}
+
+}
 
 @media(max-width:267px){
     /* lets start to style ads product*/

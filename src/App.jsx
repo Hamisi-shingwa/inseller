@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <Addpost/>  
   }, 
   {
-    path: "/product_detail",
+    path: "/product_detail/:id",
     element: <Product_detail/>  
   }, 
   {
